@@ -1,0 +1,22 @@
+# example config (see "hg help config" for more info)
+
+[ui]
+# name and email, e.g.
+# username = Jane Doe <jdoe@example.com>
+username = Buţiu Alexandru Octavian <predator5047@gmail.com>
+
+[extensions]
+# uncomment these lines to enable some popular extensions
+# (see "hg help extensions" for more info)
+# pager =
+progress =
+color =
+patchbomb=
+
+[email]
+method = smtp
+
+[smtp]
+host = smtp.googlemail.com
+username = predator5047
+tls = true

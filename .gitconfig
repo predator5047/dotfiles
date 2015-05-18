@@ -1,0 +1,9 @@
+[user]
+	name = Buţiu Alexandru Octavian
+	email = predator5047@gmail.com
+[sendemail]
+	smtpuser = predator5047@gmail.com
+	smtpserver = smtp.googlemail.com
+	smtpencryption = tls
+	smtpserverport = 587
+	suppresscc = self
