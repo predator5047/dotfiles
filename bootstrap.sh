@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 files=".bashrc .gitconfig .hgrc .muttrc .vimrc"
 
