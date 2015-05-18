@@ -5,7 +5,6 @@ set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 set laststatus=2
 
-
 let g:airline_powerline_fonts = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
@@ -38,18 +37,4 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>] :bnext<cr>
 nnoremap <leader>[ :bprevious<cr>
 
-function! RelativeLineToggle()
-	if (&relativenumber == 1)
-		set norelativenumber 
-	else
-		set relativenumber 
-	endif
-
-endfunction
-
-nnoremap <leader>l :call RelativeLineToggle()<cr>
-
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
 autocmd FocusLost * silent! wa
-"asdasdasd
