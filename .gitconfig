@@ -7,3 +7,5 @@
 	smtpencryption = tls
 	smtpserverport = 587
 	suppresscc = self
+[format]
+	signoff = true
