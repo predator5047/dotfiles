@@ -21,7 +21,7 @@ for file in $files; do
 	if [[ -z "$yes_to_all" && -f "$dir/$file" ]]; then
 		replace=true
 		while true; do
-			read -p "Do you want to replace the file $file? (y/n/d) " ynd
+			read -p "Do you want to replace the file $file? (y/n/d/q) " ynd
 			case $ynd in
 				[Yy]* ) rm -f "$dir/$file"; break;;
 				[Nn]* ) replace=false; break;;
