@@ -5,6 +5,10 @@ files=".bashrc .gitconfig .hgrc .muttrc .vimrc $HOME/.xmonad/xmonad.hs"
 echo "Creating vim backup directory"
 mkdir -p $HOME/.vim/backup
 
+if [[ "$1" = "-y" ]]; then
+	yes_to_all=true
+fi
+
 for file in $files; do
 	dir=$(dirname "$file")
 	if [[ $dir = "." ]]; then
@@ -14,9 +18,8 @@ for file in $files; do
 		mkdir -p $dir	
 	fi
 
-	echo $dir/$file $file
-	if [[ -f "$dir/$file" ]]; then
-		dont_replace=false
+	if [[ -z "$yes_to_all" && -f "$dir/$file" ]]; then
+		replace=true
 		while true; do
 			read -p "Do you want to replace the file $file? (y/n/d) " ynd
 			case $ynd in
@@ -26,10 +29,14 @@ for file in $files; do
 				[Qq]* ) exit;;
 			esac
 		done
+	else
+		replace=true
+		rm -f "$dir/$file"
 	fi
 
+	replace=true
 	if $replace; then
-		echo "Copying file $file"
+		echo "Linking file $file to $dir/$file"
 		ln -s $PWD/$file $dir/$file
 	fi
 done
