@@ -21,14 +21,14 @@ for file in $files; do
 			read -p "Do you want to replace the file $file? (y/n/d) " ynd
 			case $ynd in
 				[Yy]* ) rm -f "$dir/$file"; break;;
-				[Nn]* ) dont_replace=true; break;;
+				[Nn]* ) replace=false; break;;
 				[Dd]* ) diff -u "$dir/$file" "$file";;
 				[Qq]* ) exit;;
 			esac
 		done
 	fi
 
-	if [[ ! "$dont_replace" ]]; then
+	if $replace; then
 		echo "Copying file $file"
 		ln -s $PWD/$file $dir/$file
 	fi
