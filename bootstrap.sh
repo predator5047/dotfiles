@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-files=".bashrc .gitconfig .hgrc .muttrc .vimrc"
+files=".bashrc .gitconfig .hgrc .muttrc .vimrc $HOME/.xmonad/xmonad.hs"
 
 echo "Creating vim backup directory"
 mkdir -p $HOME/.vim/backup
