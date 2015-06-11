@@ -9,3 +9,7 @@
 	suppresscc = self
 [format]
 	signoff = true
+[core]
+	editor = vim
+[credential]
+	helper = cache
