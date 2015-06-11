@@ -39,3 +39,17 @@ for file in $files; do
 		ln -s $PWD/$file $dir/$file
 	fi
 done
+
+git_vundle="https://github.com/gmarik/Vundle.vim.git"
+git_fonts="https://github.com/powerline/fonts.git"
+
+git clone "$git_vundle"
+mkdir -p .vim/bundle
+cp -R Vundle.vim .vim/bundle
+rm -rf Vundle.vim
+
+git clone "$git_fonts"
+mkdir -p "$HOME/.fonts"
+cp -R fonts/SourceCodePro "$HOME/.fonts"
+rm -rf fonts
+fc-cache -fv
