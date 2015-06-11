@@ -34,7 +34,6 @@ for file in $files; do
 		rm -f "$dir/$file"
 	fi
 
-	replace=true
 	if $replace; then
 		echo "Linking file $file to $dir/$file"
 		ln -s $PWD/$file $dir/$file
