@@ -45,7 +45,7 @@ git_fonts="https://github.com/powerline/fonts.git"
 
 git clone "$git_vundle"
 mkdir -p .vim/bundle
-cp -R Vundle.vim .vim/bundle
+cp -R Vundle.vim "$HOME/.vim/bundle"
 rm -rf Vundle.vim
 
 git clone "$git_fonts"
