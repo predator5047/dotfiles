@@ -4,19 +4,21 @@ set lazyredraw nocompatible autowrite
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 set laststatus=2
+set wildignore=*.o,*~
 
 let g:airline_powerline_fonts = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
-
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
+if isdirectory("/home/alexandru/.vim/bundle/Vundle.vim")
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+	Plugin 'gmarik/Vundle.vim'
+	Plugin 'bling/vim-airline'
+	call vundle#end() 
+endif
 
-call vundle#end() 
 
 syntax enable
 colorscheme desert
