@@ -18,8 +18,8 @@ for file in $files; do
 		mkdir -p $dir	
 	fi
 
+	replace=true
 	if [[ -z "$yes_to_all" && -f "$dir/$file" ]]; then
-		replace=true
 		while true; do
 			read -p "Do you want to replace the file $file? (y/n/d/q) " ynd
 			case $ynd in
@@ -30,11 +30,11 @@ for file in $files; do
 			esac
 		done
 	else
-		replace=true
+		echo "Removing file $dir/$file"
 		rm -f "$dir/$file"
 	fi
 
-	if $replace; then
+	if "$replace"; then
 		echo "Linking file $file to $dir/$file"
 		ln -s $PWD/$file $dir/$file
 	fi
