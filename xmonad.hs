@@ -22,7 +22,7 @@ myConfig = defaultConfig {
 		((mod4Mask, xK_F11), spawn "pactl set-sink-volume @DEFAULT_SINK@ -- -5%"),
 		((mod4Mask, xK_F12), spawn "pactl set-sink-volume @DEFAULT_SINK@ -- +5%"),
 		((mod4Mask, xK_F10), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle"),
-		((mod4Mask, xK_l), spawn "xtrlock")
+		((mod4Mask, xK_F8), spawn "xtrlock")
 	]
 
 
