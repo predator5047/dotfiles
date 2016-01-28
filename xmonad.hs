@@ -19,9 +19,10 @@ myConfig = defaultConfig {
 		manageHook = manageDocks <+> (isFullscreen --> doFullFloat) <+> manageHook defaultConfig <+> manageDocks,
 		layoutHook = smartBorders . layoutHook $ defaultConfig
 	} `additionalKeys` [
-		((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -- -5%"),
-		((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -- +5%"),
-		((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+		((mod4Mask, xK_F11), spawn "pactl set-sink-volume @DEFAULT_SINK@ -- -5%"),
+		((mod4Mask, xK_F12), spawn "pactl set-sink-volume @DEFAULT_SINK@ -- +5%"),
+		((mod4Mask, xK_F10), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle"),
+		((mod4Mask, xK_l), spawn "xtrlock")
 	]
 
 
