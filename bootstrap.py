@@ -10,6 +10,7 @@ files = {
         ".vimrc" : "~",
         ".xmobarrc" : "~",
         "xmonad.hs" : "~/.xmonad",
+        "getvolume.sh" : "~/.xmonad",
         ".Xresources" : "~",
 }
 
